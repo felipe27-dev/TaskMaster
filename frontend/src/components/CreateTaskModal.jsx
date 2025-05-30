@@ -25,7 +25,8 @@ const CreateTaskModal = ({ isOpen, onClose, onSubmit, onUpdate, listId, taskToEd
                 setDeliveryDate(formattedDate);
                 // Ensure priority matches one of the select options, default to Normal if not
                 const validPriorities = ['baixa', 'normal', 'alta']; // Match options below
-                setPriority(validPriorities.includes(taskToEdit.priority) ? taskToEdit.priority : 'normal');
+                const formattedPriority = taskToEdit.priority.charAt(0).toUpperCase() + taskToEdit.priority.slice(1).toLowerCase();
+                setPriority(formattedPriority);
             } else {
                 // Clear fields for creating a new task
                 setTitle('');
@@ -51,7 +52,7 @@ const CreateTaskModal = ({ isOpen, onClose, onSubmit, onUpdate, listId, taskToEd
             description: description.trim(),
             // Send date back in the format expected by backend (might need adjustment)
             delivery_date: delivery_date || null, // Send null if empty
-            priority: priority,
+            priority: priority // Capitalize first letter
             // list_title might be needed if updating list, but typically handled by drag-and-drop
         };
 
@@ -76,7 +77,6 @@ const CreateTaskModal = ({ isOpen, onClose, onSubmit, onUpdate, listId, taskToEd
         }
         onClose(); // Close modal after submit/update attempt
     };
-
     const handleModalContentClick = (e) => e.stopPropagation();
 
     const modalContent = (

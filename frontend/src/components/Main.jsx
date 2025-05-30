@@ -261,6 +261,7 @@ export default function Main({ sidebarCollapsed }) {
         setTasks(prevTasks => prevTasks.map(task => task.id === taskId ? { ...task, ...updatedData } : task));
         setError(null);
         try {
+            console.log(`Main: Updating task ${taskId} with data:`, updatedData);
             // Use fetchWithAuth for PUT
             const updatedTask = await fetchWithAuth(`/tasks/${taskId}`, {
                 method: 'PUT',

@@ -8,42 +8,56 @@ import TeamMemberCard from './TeamMemberCard';
 
 // Dados fictícios da equipe (substitua pelos seus dados reais)
 const teamMembersData = [
-    {
+        {
         id: 1,
         // Use um serviço como ui-avatars.com ou source.unsplash para placeholders se não tiver fotos
         photoUrl: `https://ui-avatars.com/api/?name=Joao+Pedro&background=D8432D&color=fff&size=128&font-size=0.33&bold=true`,
-        name: 'João Pedro Martins',
-        course: 'Engenharia de Software - Universidade X',
-        role: 'Desenvolvedor Full-Stack ',
+        name: 'João Pedro Martins Montera',
+        course: 'Sistemas de Informação - 5º Semestre - UFMS',
+        role: 'Desenvolvedor Front-End ',
         socialLinks: {
-            instagram: 'https://www.instagram.com/jpmartins.03/',
-            linkedin: 'https://www.linkedin.com/in/jo%C3%A3o-pedro-martins-272a03225/',
+            instagram: 'https://www.instagram.com/jotape_314/',
+            linkedin: 'https://www.linkedin.com/in/jo%C3%A3o-pedro-martins-montera-35b638285/',
             github: 'https://github.com/jpmartins03',
-            gmail: 'jpmartinsfs03@gmail.com',
-            whatsapp: '5567996169905' // Apenas números para a função getWhatsAppLink
+            gmail: 'jpmartins1013@gmail.com',
+            whatsapp: '5567998864911'
         }
     },
     {
         id: 2,
-        photoUrl: `https://ui-avatars.com/api/?name=Membro+Equipe+2&background=7A1B5E&color=fff&size=128&font-size=0.33&bold=true`,
-        name: 'Membro da Equipe 2',
-        course: 'Design Gráfico - Instituto Y',
-        role: 'UI/UX Designer',
+        photoUrl: `https://ui-avatars.com/api/?name=Helen+Yukari&background=7A1B5E&color=fff&size=128&font-size=0.33&bold=true`,
+        name: 'Helen Yukari Ohara Tochetto',
+        course: 'Engenharia de Computação - 5º Semestre - UFMS',
+        role: 'Desenvolvedora Back-End',
         socialLinks: {
-            instagram: '#',
-            linkedin: '#',
-            gmail: 'membro2@exemplo.com',
+            instagram: 'https://www.instagram.com/helenyukari_ot?igsh=MTRyMGhlenVvdnp3dw==',
+            linkedin: 'https://www.linkedin.com/in/helen-yukari-0494b31a9/',
+            github: 'https://github.com/Helenyukari',
+            gmail: 'helenyukari1@gmail.com',
+            whatsapp: '+55 67 9860-3016'
         }
     },
     {
         id: 3,
-        photoUrl: `https://ui-avatars.com/api/?name=Membro+Equipe+3&background=3F0C56&color=fff&size=128&font-size=0.33&bold=true`,
-        name: 'Membro da Equipe 3',
+        photoUrl: `https://ui-avatars.com/api/?name=Felipe+Rosa+2&background=DC143C&color=fff&size=128&font-size=0.33&bold=true`,
+        name: 'Felipe Rosa',
+        course: 'Sistemas de Informação - 1º Semestre - UFMS',
+        role: 'Desenvolvedor Full-Stack',
+        socialLinks: {
+            linkedin: 'https://www.linkedin.com/in/felipe-de-souza-rosa-352257340/',
+            gmail: 'felipsouzarosa@gmail.com',
+            github: 'https://github.com/felipe27-dev',
+        }
+    },
+    {
+        id: 4,
+        photoUrl: `https://ui-avatars.com/api/?name=Joao+Vitor3&background=3F0C56&color=fff&size=128&font-size=0.33&bold=true`,
+        name: 'João Vitor Barbieri',
         course: 'Engenharia de Software - Estácio',
-        role: 'Gerente de Projeto & Quality Assurance',
+        role: 'Desenvolvedor Back-End',
         socialLinks: {
             linkedin: '#',
-            github: '#',
+            github: 'https://github.com/JoaoBarbier',
             whatsapp: '5511988887777'
         }
     },

@@ -13,7 +13,7 @@ const port = process.env.PORT || 3001; // Usar porta 3001 para consistência com
 
 // Middleware CORS - Configuração mais flexível
 app.use(cors({
-    origin: "*", // Em produção, restrinja para a URL do seu frontend
+    origin: process.env.FRONTEND_URL || "*", // IMPORTANTE: Defina a variável de ambiente FRONTEND_URL no Render com a URL do seu frontend!
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
 }));
@@ -47,6 +47,6 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`✅ Servidor backend rodando na porta ${port}`);
+  // console.log(`✅ Servidor backend rodando na porta ${port}`); // Comentado para produção
 });
 
