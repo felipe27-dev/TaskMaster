@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To Do List</title>
+</head>
+<body>
+  <h1>Adicionar Tarefa</h1>
+
+  <!-- Formulário para adicionar tarefa -->
+  <form id="form-tarefa"> <!-- agrupa campos vão ser enviados juntos-->
+    <input type="text" id="task_name" placeholder="Nome da tarefa" required />
+    <button type="submit">Adicionar</button> <!--Botão para enviar o formulário-->
+  </form>
+
+  <h2>Lista de Tarefas</h2>
+  <ul id="lista-tarefas"> <!--Vamos usar esse ID para colocar as tarefas via JavaScript.-->
+    <!-- Tarefas serão carregadas aqui -->
+  </ul>
+
+  <script>
+    const form = document.getElementById('form-tarefa');
+    const lista = document.getElementById('lista-tarefas');
+
+    // Carrega as tarefas ao abrir a página
+    async function carregarTarefas() {
+      lista.innerHTML = "";
+      try {
+        const res = await fetch('/tasks');
+        const tarefas = await res.json();
+
+        tarefas.forEach(tarefa => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            ${tarefa.task_name}
+            <button onclick="deletarTarefa(${tarefa.id})">  Apagar</button>
+          `;
+          lista.appendChild(li);
+        });
+      } catch (err) {
+        console.error('Erro ao carregar tarefas:', err);
+      }
+    }
+
+    // Adiciona nova tarefa
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const task_name = document.getElementById('task_name').value;
+
+      try {
+        const response = await fetch('/tasks', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ task_name })
+        });
+
+        const data = await response.json();
+        console.log('Tarefa criada:', data);
+        form.reset();
+        carregarTarefas();
+      } catch (error) {
+        console.error('Erro ao adicionar tarefa:', error);
+      }
+    });
+
+    // Deleta tarefa
+    async function deletarTarefa(id) {
+      if (confirm("Deseja realmente apagar esta tarefa?")) {
+        try {
+          const res = await fetch(`/tasks/${id}`, {
+            method: "DELETE"
+          });
+
+          const result = await res.json();
+          alert(result.message || "Tarefa removida");
+          carregarTarefas();
+        } catch (error) {
+          console.error("Erro ao deletar tarefa:", error);
+        }
+      }
+    }
+
+    // Inicializa a lista ao carregar
+    carregarTarefas();
+  </script>
+</body>
+</html>
