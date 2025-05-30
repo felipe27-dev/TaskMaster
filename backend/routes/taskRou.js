@@ -10,7 +10,8 @@ router.use(authMiddleware.verifyToken);
 router.get("/", TaskController.getTasks); // Busca tarefas DO USUÁRIO LOGADO
 router.post("/", TaskController.createTask); // Cria uma nova tarefa PARA O USUÁRIO LOGADO
 router.put("/:id", TaskController.updateTask); // Atualiza uma tarefa DO USUÁRIO LOGADO
-router.delete("/:id", TaskController.deleteTask); // Deleta uma tarefa DO USUÁRIO LOGADO
 router.delete("/completed", TaskController.deleteCompletedTasks); // Deleta tarefas concluídas DO USUÁRIO LOGADO
+router.delete("/:id", TaskController.deleteTask); // Deleta uma tarefa DO USUÁRIO LOGADO
+
 
 module.exports = router;

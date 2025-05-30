@@ -25,13 +25,13 @@ const CreateTaskModal = ({ isOpen, onClose, onSubmit, onUpdate, listId, taskToEd
                 setDeliveryDate(formattedDate);
                 // Ensure priority matches one of the select options, default to Normal if not
                 const validPriorities = ['baixa', 'normal', 'alta']; // Match options below
-                setPriority(validPriorities.includes(taskToEdit.priority) ? taskToEdit.priority : 'Normal');
+                setPriority(validPriorities.includes(taskToEdit.priority) ? taskToEdit.priority : 'normal');
             } else {
                 // Clear fields for creating a new task
                 setTitle('');
                 setDescription('');
                 setDeliveryDate('');
-                setPriority('Normal');
+                setPriority('normal');
             }
         }
     }, [isOpen, taskToEdit]); // Re-run when modal opens or taskToEdit changes
@@ -115,7 +115,6 @@ const CreateTaskModal = ({ isOpen, onClose, onSubmit, onUpdate, listId, taskToEd
                         <select id="taskPriorityModal" value={priority} onChange={(e) => setPriority(e.target.value)} className="w-full p-2 rounded bg-slate-700 border border-slate-600 focus:border-sky-500 focus:ring-sky-500 outline-none appearance-none">
                             <option value="Baixa">Baixa</option>
                             <option value="Normal">Normal</option>
-                    
                             <option value="Alta">Alta</option>
                         </select>
                     </div>

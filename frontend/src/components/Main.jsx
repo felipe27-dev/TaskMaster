@@ -29,6 +29,7 @@ const applyDefaultSort = (tasks) => {
         return 0;
     };
 
+
     const getDateValue = (dateString) => {
         try {
             const date = new Date(dateString);
@@ -59,6 +60,7 @@ const applyDefaultSort = (tasks) => {
         return (a.id ?? 0) - (b.id ?? 0); // Fallback sort by ID
     });
 };
+
 
 export default function Main({ sidebarCollapsed }) {
     // --- State Management ---
@@ -301,7 +303,7 @@ export default function Main({ sidebarCollapsed }) {
 
             try {
                 // Use fetchWithAuth for the bulk delete endpoint
-                await fetchWithAuth('/taskscompleted', { method: 'DELETE' });
+                await fetchWithAuth('/tasks/completed', { method: 'DELETE' });
                 alert(`${tasksToDelete.length} tarefas concluídas foram excluídas com sucesso.`);
             } catch (err) {
                  // Ignore 404 (Not Found) error if there were no completed tasks on the backend

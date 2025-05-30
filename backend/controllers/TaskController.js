@@ -112,11 +112,11 @@ const updateTask = async (req, res) => {
                           .filter(([key, value]) => value !== undefined);
 
   // Validações específicas (ex: status, priority)
-  const validStatuses = ["To Do", "In Progress", "Done", "Archived"];
+  const validStatuses = ["To Do", "Done"];
   if (status && !validStatuses.includes(status)) {
       return res.status(400).json({ message: `Status inválido: ${status}` });
   }
-  const validPriorities = ["low", "normal", "high", "urgent"];
+  const validPriorities = ["baixa", "normal", "alta"];
   if (priority && !validPriorities.includes(priority.toLowerCase())) {
       return res.status(400).json({ message: `Prioridade inválida: ${priority}` });
   }

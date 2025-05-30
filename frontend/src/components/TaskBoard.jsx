@@ -32,7 +32,7 @@ export default function TaskBoard({
 }) {
 
     // --- Local UI State ---
-    const [isPinnedAreaCollapsed, setIsPinnedAreaCollapsed] = useState(false);
+    const [isPinnedAreaCollapsed, setIsPinnedAreaCollapsed] = useState(true);
 
     // --- Derived State ---
     // Calculate hasCompletedTasks based on passed tasks prop

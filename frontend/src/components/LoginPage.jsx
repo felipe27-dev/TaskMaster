@@ -125,7 +125,7 @@ const LoginPage = () => {
                     <>
                         <h1 className="text-2xl font-semibold mb-4 text-gray-700">Bem-vindo ao</h1>
                         <div className="flex items-center justify-center gap-2 mb-2">
-                            <img src={meuIcone} alt="Logo TaskMaster" className="h-36" />
+                            <img src={meuIcone} alt="Logo TaskMaster" className="h-20" />
                             {/* <span className="text-xl font-bold text-gray-800">TaskMaster</span> */}
                         </div>
                         <p className="text-gray-600 mb-8">
