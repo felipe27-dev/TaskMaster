@@ -247,7 +247,7 @@ const ProfilePage = () => {
                             >
                                 Mudar senha
                             </button>
-                            <p className="text-xs text-slate-500 mt-1">A funcionalidade de mudança de senha deve ser implementada separadamente.</p>
+                            <p className="text-xs text-slate-500 mt-1">A funcionalidade de mudança de senha será implementada futuramente.</p>
                         </div>
                     </div>
                 </div>

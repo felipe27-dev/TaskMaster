@@ -9,7 +9,7 @@ import { Eye, EyeOff, ArrowLeft } from 'react-feather';
 import PrototypeAlert from "./PrototypeAlert";
 
 // Definir a URL base da API (ajuste conforme necessário, pode vir de .env)
-const API_BASE_URL = "http://localhost:3001"; // Assumindo que o backend roda na porta 3001
+const API_BASE_URL = import.meta.env.VITE_API_URL; 
 
 const LoginPage = () => {
     const navigate = useNavigate();
@@ -43,7 +43,7 @@ const LoginPage = () => {
         setLoading(true);
         setError(null);
         try {
-            const response = await axios.post(`${API_BASE_URL}/api/auth/login`, {
+            const response = await axios.post(`${API_BASE_URL}/auth/login`, {
                 email,
                 password,
             });
@@ -70,7 +70,7 @@ const LoginPage = () => {
         setLoading(true);
         setError(null);
         try {
-            const response = await axios.post(`${API_BASE_URL}/api/auth/register`, {
+            const response = await axios.post(`${API_BASE_URL}/auth/register`, {
                 username, // Usar 'username' conforme o backend espera
                 email,
                 password,

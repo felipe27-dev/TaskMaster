@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, BarChart2, Settings, Home, User } from 'react-feather';
+import { ChevronLeft, ChevronRight, BarChart2, Settings, Home, User, LogOut} from 'react-feather';
 import meuIcone2 from '../assets/taskmaster_logo_monochrome_lateral_white-nobg.png';
 import meuIcone3 from '../assets/taskmaster_logo_monochrome_lateral_symbol_white-nobg.png';
 
@@ -33,7 +33,7 @@ const Sidebar = ({ collapsed, onToggle, profileImageUrl }) => {
           <img
             src={meuIcone2}
             alt="Logo"
-            className={`w-[200px] h-[75px] flex-shrink-0 transition-all duration-300`}
+            className={`w-[190px] h-[75px] ml-4 flex-shrink-0 transition-all duration-300`}
           />
         ) : (
           <img
@@ -76,6 +76,7 @@ const Sidebar = ({ collapsed, onToggle, profileImageUrl }) => {
         <SidebarItem icon={<Home size={20} />} label="Minhas tarefas" collapsed={!isExpanded} to="/app" />
         <SidebarItem icon={<BarChart2 size={20} />} label="Estatísticas" collapsed={!isExpanded} to="/app/statistics" />
         <SidebarItem icon={<Settings size={20} />} label="Configurações" collapsed={!isExpanded} to="/app/settings" />
+        <SidebarItem icon={<LogOut size={20} />} label="Sair" collapsed={!isExpanded} to="/" />
       </nav>
     </div>
   );

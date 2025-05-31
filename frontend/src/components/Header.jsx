@@ -11,7 +11,7 @@ export default function Header() {
                 {/* Seção Esquerda: Título */}
                 <div>
                     <h1 className="text-2xl font-semibold text-gray-100"> {/* Aumentado para text-2xl */}
-                        TaskMaster Board
+                        TaskMaster
                     </h1>
                 </div>
 

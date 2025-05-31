@@ -35,7 +35,7 @@ const PinnedListsArea = ({
             <div
                 className={`${sidebarCollapsed ? '-ml-12' : '-ml-2'}mr-auto  w-[952px] bg-slate-900/90 backdrop-blur-sm p-3 border-t-2 border-slate-700 shadow-2xl rounded-t-lg`}
             >
-                <div className="flex items-center justify-between text-slate-300 mb-2 px-2">
+                <div className=" items-center justify-between text-slate-300 mb-2 px-2">
                     <div className="flex items-center">
                         <Star size={18} className="mr-2 text-yellow-400 flex-shrink-0" />
                         <h3 className="text-md font-semibold">Colunas Fixadas (Máx: {MAX_PINNED_LISTS})</h3>

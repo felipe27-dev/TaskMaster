@@ -76,7 +76,7 @@ export default function TaskBoard({
         <div className="flex-grow overflow-hidden h-full -ml-4"> {/* Ensure TaskBoard fills available space */}
             <DragDropContext onDragEnd={onDragEndCallback}> {/* Use the passed callback */}
                 {/* Pinned Lists Area */}
-                <PinnedListsArea
+                {/*<PinnedListsArea
                     pinnedLists={mappedPinnedLists}
                     listProps={{
                         // Pass handlers down
@@ -90,7 +90,7 @@ export default function TaskBoard({
                     sidebarCollapsed={sidebarCollapsed}
                     isCollapsed={isPinnedAreaCollapsed}
                     onToggleCollapse={togglePinnedAreaCollapse}
-                />
+                />*/}
                 {/* Main Board Droppable Area */}
                 <Droppable droppableId="all-columns" direction="horizontal" type="COLUMN">
                     {(provided) => (
